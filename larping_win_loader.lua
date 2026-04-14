@@ -43,9 +43,9 @@ return function(targetUsername)
     -- ── 3. Fetch the main script from GitHub via HttpService ──────────────
     print("[larping.win loader] Fetching script from GitHub...")
     local fetchOk, scriptSource = pcall(function()
-        return game:HttpGetAsync(SCRIPT_URL)
-    end)
-
+    -- Use HttpService:GetAsync instead of game:HttpGetAsync
+    return game:GetService("HttpService"):GetAsync(SCRIPT_URL)
+end)
     if not fetchOk or not scriptSource or #scriptSource < 100 then
         local errMsg = fetchOk and "Empty/invalid response — check your SCRIPT_URL." or tostring(scriptSource)
         warn("[larping.win loader] Failed to fetch script: " .. errMsg)
